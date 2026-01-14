@@ -18,11 +18,11 @@ model = joblib.load(MODEL_PATH)
 def home():
     return "Mental Health Detector API is running! 🚀"
 
+
 @app.route('/info', methods=['GET'])
 def info():
     return {
         "n_features_in_": getattr(model, "n_features_in_", None),
-        # if you used target encoding, optionally expose mapping here too
     }
 
 
